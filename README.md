@@ -39,6 +39,21 @@ Deploy Ingress
 kubectl -n echo apply -f ingress/nginx/ingress.yaml
 ```
 
+### Traefik 2
+
+Install Traefik 2 ingress controller
+```
+kubectl create ns ingress-traefik
+helm repo add traefik https://helm.traefik.io/traefik
+helm repo update
+helm install -n ingress-traefik traefik traefik/traefik -f ingress/traefik/values.yaml
+```
+
+Deploy IngressRoute
+```
+kubectl -n echo apply -f ingress/traefik/ingress.yaml
+```
+
 current result:
 
 ```

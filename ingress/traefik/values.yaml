@@ -1,0 +1,14 @@
+# see https://github.com/traefik/traefik-helm-chart/blob/master/traefik/values.yaml
+globalArguments: []
+additionalArguments:
+  # If you have all the range ips from OVH you can specify ranges if not just use insecure
+  #- "--entryPoints.web.proxyProtocol.trustedIPs=10.108.0.0/14"
+  - "--entryPoints.web.proxyProtocol.insecure"
+  #- "--entryPoints.websecure.proxyProtocol.trustedIPs=10.108.0.0/14"
+  - "--entryPoints.websecure.proxyProtocol.insecure"
+
+service:
+  annotations:
+    service.beta.kubernetes.io/ovh-loadbalancer-proxy-protocol: v1
+  spec: 
+    externalTrafficPolicy: Local
