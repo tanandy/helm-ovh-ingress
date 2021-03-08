@@ -1,0 +1,5 @@
+# Used to update dynamic created ips when you deployed the ingress controller for the first time
+
+additionalArguments:
+  - "--entryPoints.web.proxyProtocol.trustedIPs=10.124.131.145/32,10.124.129.17/32,10.124.129.245/32,10.124.130.196/32,51.68.83.144/32,51.91.211.212/32"
+  - "--entryPoints.websecure.proxyProtocol.trustedIPs=10.124.131.145/32,10.124.129.17/32,10.124.129.245/32,10.124.130.196/32,51.68.83.144/32,51.91.211.212/32"
