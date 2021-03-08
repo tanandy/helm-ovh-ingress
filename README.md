@@ -40,7 +40,7 @@ Use proxy protocol with limited ranges for security (optional)
 kubectl get svc nginx-ingress-nginx-controller -n ingress-nginx -o jsonpath="{.metadata.annotations.lb\.k8s\.ovh\.net/egress-ips}"
 # Update `values-upgrades-ips.yaml` with ovh ranges ips
 vim values-upgrades-ips.yaml
-# Upgrade traefik with dynamics retrieved values
+# Upgrade nginx with dynamics retrieved values
 helm upgrade --reuse-values -n ingress-nginx nginx ingress-nginx/ingress-nginx -f ingress/nginx/values-upgrade-ips.yaml
 ```
 
