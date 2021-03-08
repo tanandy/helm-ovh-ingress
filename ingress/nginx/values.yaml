@@ -3,7 +3,4 @@ controller:
       externalTrafficPolicy: "Local"
       annotations: {"service.beta.kubernetes.io/ovh-loadbalancer-proxy-protocol": "v1"}
   config:
-    use-forwarded-headers: "true"
-    compute-full-forwarded-for: "true"
     use-proxy-protocol: "true"
-
