@@ -34,6 +34,16 @@ helm repo update
 helm install -n ingress-nginx nginx ingress-nginx/ingress-nginx -f ingress/nginx/values.yaml
 ```
 
+Use proxy protocol with limited ranges for security (optional)
+```
+# Retrieve egress-ips for OVH
+kubectl get svc nginx-ingress-nginx-controller -n ingress-nginx -o jsonpath="{.metadata.annotations.lb\.k8s\.ovh\.net/egress-ips}"
+# Update `values-upgrades-ips.yaml` with ovh ranges ips
+vim values-upgrades-ips.yaml
+# Upgrade traefik with dynamics retrieved values
+helm upgrade --reuse-values -n ingress-nginx nginx ingress-nginx/ingress-nginx -f ingress/nginx/values-upgrade-ips.yaml
+```
+
 Deploy Ingress
 ```
 kubectl -n echo apply -f ingress/nginx/ingress.yaml

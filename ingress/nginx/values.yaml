@@ -4,3 +4,5 @@ controller:
       annotations: {"service.beta.kubernetes.io/ovh-loadbalancer-proxy-protocol": "v1"}
   config:
     use-proxy-protocol: "true"
+    use-forwarded-headers: "false"
+    proxy-real-ip-cidr: "127.0.0.1/32"

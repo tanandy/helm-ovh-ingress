@@ -1,0 +1,6 @@
+# Used to update dynamic created ips when you deployed the ingress controller for the first time
+
+controller:
+  config:
+    proxy-real-ip-cidr: "10.124.131.192/32,10.124.129.144/32,10.124.129.16/32,10.124.130.1/32,51.91.210.225/32,51.91.210.19/32"
+
